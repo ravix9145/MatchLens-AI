@@ -14,13 +14,13 @@ st.set_page_config(
 def load_artifacts():
    BASE_DIR = Path(__file__).resolve().parent
 
-    model_path = BASE_DIR / "models" / "match_predictor.pkl"
-    data_path = BASE_DIR / "models" / "team_data.pkl"
+   model_path = BASE_DIR / "models" / "match_predictor.pkl"
+   data_path = BASE_DIR / "models" / "team_data.pkl"
 
-    model = joblib.load(model_path)
-    team_data = joblib.load(data_path)
+   model = joblib.load(model_path)
+   team_data = joblib.load(data_path)
 
-    return model, team_data["team_stats"], team_data["feature_cols"]
+   return model, team_data["team_stats"], team_data["feature_cols"]
 
 # Load artifacts
 model, team_stats, feature_cols = load_artifacts()
