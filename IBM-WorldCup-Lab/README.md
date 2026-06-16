@@ -1,4 +1,4 @@
-# ⚽ IBM World Cup Predictor
+# ⚽ MatchLens AI
 
 An AI-powered football match prediction application built using Python, Machine Learning, Streamlit, and IBM Bob as part of the IBM SkillsBuild AI Builders Challenge.
 
