@@ -12,12 +12,15 @@ st.set_page_config(
 
 @st.cache_resource
 def load_artifacts():
-    """Load the trained model and team data."""
-    model = joblib.load("models/match_predictor.pkl")
-    team_data = joblib.load("models/team_data.pkl")
-    team_stats = team_data["team_stats"]
-    feature_cols = team_data["feature_cols"]
-    return model, team_stats, feature_cols
+   BASE_DIR = Path(__file__).resolve().parent
+
+    model_path = BASE_DIR / "models" / "match_predictor.pkl"
+    data_path = BASE_DIR / "models" / "team_data.pkl"
+
+    model = joblib.load(model_path)
+    team_data = joblib.load(data_path)
+
+    return model, team_data["team_stats"], team_data["feature_cols"]
 
 # Load artifacts
 model, team_stats, feature_cols = load_artifacts()
